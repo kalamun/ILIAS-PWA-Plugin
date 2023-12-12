@@ -32,7 +32,7 @@ class ilPWAUIHookGUI extends ilUIHookPluginGUI {
     return ["mode" => ilUIHookPluginGUI::KEEP, "html" => ""];
   }
 
-  function modifyGUI($a_comp, $a_part, $a_par = array())
+  function modifyGUI(string $a_comp, string $a_part, array $a_par = []): void
 	{
 	}
   
