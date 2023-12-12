@@ -19,9 +19,13 @@ class ilPWAPlugin extends ilUserInterfaceHookPlugin
         return self::$instance;
     }
 
-    public function __construct()
+    public function __construct(
+        \ilDBInterface $db,
+        \ilComponentRepositoryWrite $component_repository,
+        string $id
+    )
     {
-        parent::__construct();
+        parent::__construct($db, $component_repository, $id);
     }
 
     public function getPluginName() : string
