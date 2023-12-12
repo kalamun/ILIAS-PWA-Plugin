@@ -17,7 +17,8 @@ class ilPWAUIHookGUI extends ilUIHookPluginGUI {
     $this->plugin = ilPWAPlugin::getInstance();
   }
   
-	function getHTML($a_comp = false, $a_part = false, $a_par = array()) {
+	function getHTML(string $a_comp, string $a_part, array $a_par = []): array
+  {
     if($a_part == "template_get" && strpos($a_par["tpl_id"], "standardpage.html") !== false) {
       $html = $a_par["html"];
       $html = str_replace('</head>', '<link rel="manifest" href="/manifest.json" />' . "\n" . '</head>', $html);
