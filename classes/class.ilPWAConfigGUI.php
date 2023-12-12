@@ -31,7 +31,7 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
       $this->object = $this->dic->object();
     }
     
-    public function performCommand(/*string*/ $cmd)/*:void*/
+    public function performCommand(string $cmd) :void
     {
         $this->plugin = $this->getPluginObject();
 
@@ -47,7 +47,7 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
 		}
     }
 
-    protected function configure()/*: void*/
+    protected function configure(): void
     {
         global $tpl, $ilCtrl, $lng;
 
@@ -98,7 +98,7 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
 		$tpl->setContent($form->getHTML());
     }
 
-    protected function updateConfigure()/*: void*/
+    protected function updateConfigure(): void
     {
         global $lng;
 
