@@ -4,3 +4,6 @@ title_long#:#Nome dell’app
 title_short#:#Nome breve dell’app
 icon_192#:#Icona piccola (192 x 192px, PNG)
 icon_512#:#Icona grande (512 x 512px, PNG)
+install_title#:#Installa l’app sul tuo dispositivo
+not_now#:#Non ora
+install#:#Installa

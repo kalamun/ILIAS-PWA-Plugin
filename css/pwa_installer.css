@@ -1,0 +1,27 @@
+.pwa_installation_banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+  display: none;
+}
+
+.pwa_installation_banner.visible {
+  display: block;
+}
+
+.pwa_installation_banner .title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.pwa_installation_banner .ctas {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
