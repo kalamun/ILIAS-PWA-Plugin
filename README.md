@@ -25,4 +25,5 @@ There you can fill the parameters for your WebApp, choose the icons (in PNG) and
 
 
 ## Requirements
-This plugin is compatible with ILIAS v7.x
+This plugin is compatible with ILIAS v8.x
+For ILIAS v7. support, check the ilias_7 branch
