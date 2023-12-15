@@ -6,9 +6,6 @@
  * @ilCtrl_IsCalledBy ilPWAConfigGUI: ilObjComponentSettingsGUI
  */
 
-/**
- * Config screen
- */
 class ilPWAConfigGUI extends ilPluginConfigGUI {
 
     const PLUGIN_CLASS_NAME = ilPWAPlugin::class;
@@ -23,6 +20,8 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
     protected $user;
     protected $ctrl;
     protected $object;
+    protected $tpl;
+    protected $ui;
   
     public function __construct()
     {
@@ -35,6 +34,8 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
       $this->user = $this->dic->user();
       $this->ctrl = $this->dic->ctrl();
       $this->object = $this->dic->object();
+      $this->ui = $this->dic->ui();
+      $this->tpl = $this->dic['tpl'];
     }
     
     public function performCommand(string $cmd) :void
@@ -53,9 +54,9 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
 		}
     }
 
-    protected function configure(): void
+    protected function configure($htmlMessage = ""): void
     {
-        global $tpl, $ilCtrl, $lng;
+        global $ilCtrl, $lng;
 
         $title_long = "";
         $title_short = "";
@@ -101,7 +102,7 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
         
         $form->addCommandButton("updateConfigure", $lng->txt("save"));
 
-		$tpl->setContent($form->getHTML());
+		$this->tpl->setContent($htmlMessage . $form->getHTML());
     }
 
     protected function updateConfigure(): void
@@ -122,9 +123,9 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
             move_uploaded_file($_FILES["icon_512"]["tmp_name"], './manifest_logo512.png');
         }
 
-        self::configure();
-
-        ilUtil::sendSuccess($this->plugin->txt("configuration_saved"), true);
-
+        $box_factory = $this->ui->factory()->messageBox();
+        $box = $box_factory->success($this->plugin->txt("configuration_saved"));
+        $htmlMessage = $this->ui->renderer()->render($box);
+        self::configure($htmlMessage);
     }
 }
