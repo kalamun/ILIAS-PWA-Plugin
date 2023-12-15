@@ -15,15 +15,17 @@ git clone https://github.com/kalamun/ILIAS-PWA-Plugin.git PWA
 ```
 
 Then go to Administration > Extending ILIAS > Plugins and select “Install” from the PWA plugin actions menu.
-![image](https://github.com/kalamun/ILIAS-PWA-Plugin/assets/385026/5e240266-ef51-4f4b-8824-6410f85e4de7)
+![image](https://github.com/kalamun/ILIAS-PWA-Plugin/assets/385026/1cf1da22-e894-4ed0-bd22-faf9868f3909)
 Then, from the same menu, select “Activate”.
 And finally, still from the same menu, “Configure”.
 
 There you can fill the parameters for your WebApp, choose the icons (in PNG) and “Save”.
-![image](https://github.com/kalamun/ILIAS-PWA-Plugin/assets/385026/c4d773c2-e60d-4b21-93fc-636e9ec343a6)
+![image](https://github.com/kalamun/ILIAS-PWA-Plugin/assets/385026/58243fe5-c03c-4423-a98f-0d3f5b7ff605)
+
 
 
 
 ## Requirements
 This plugin is compatible with ILIAS v8.x
+
 For ILIAS v7. support, check the ilias_7 branch
