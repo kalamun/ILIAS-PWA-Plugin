@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * Class ilPWAConfigGUI
+ * @author            Roberto Pasini <bonjour@kalamun.net>
+ * @ilCtrl_IsCalledBy ilPWAConfigGUI: ilObjComponentSettingsGUI
+ */
+
+/**
  * Config screen
  */
 class ilPWAConfigGUI extends ilPluginConfigGUI {
