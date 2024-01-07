@@ -18,7 +18,8 @@ class ilPWAUIHookGUI extends ilUIHookPluginGUI {
   }
   
 	function getHTML($a_comp = false, $a_part = false, $a_par = array()) {
-    if($a_part == "template_get" && strpos($a_par["tpl_id"], "standardpage.html") !== false) {
+
+    if($a_part == "template_load" && strpos($a_par["tpl_id"], "tpl.main.html") !== false) {
       $html = $a_par["html"];
       $html = str_replace('</head>', '<link rel="manifest" href="/manifest.json" />' . "\n" . '</head>', $html);
       $html = str_replace('</head>', '<script src="' . preg_replace('/^' . preg_quote($_SERVER['DOCUMENT_ROOT'], '/') . '(.*)\/classes/', '$1', __DIR__) . '/js/pwa_installer.js"></script>' . "\n" .'</head>', $html);

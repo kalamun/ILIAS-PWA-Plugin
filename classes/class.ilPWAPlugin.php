@@ -10,7 +10,7 @@ class ilPWAPlugin extends ilUserInterfaceHookPlugin
     const PLUGIN_NAME = "PWA";
     protected static $instance = null;
 
-    public static function getInstance() : self
+    public static function getInstance()/*  : self */
     {
         if (self::$instance === null) {
             self::$instance = new self();
@@ -24,7 +24,7 @@ class ilPWAPlugin extends ilUserInterfaceHookPlugin
         parent::__construct();
     }
 
-    public function getPluginName() : string
+    public function getPluginName()/*  : string */
     {
         return self::PLUGIN_NAME;
     }

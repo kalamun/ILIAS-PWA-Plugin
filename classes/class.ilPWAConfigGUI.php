@@ -1,4 +1,5 @@
 <?php
+require("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/PWA/classes/class.ilPWAPlugin.php");
 
 /**
  * Config screen
@@ -16,7 +17,6 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
     protected $request;
     protected $user;
     protected $ctrl;
-    protected $object;
   
     public function __construct()
     {
@@ -28,7 +28,6 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
       $this->request = $this->dic->http()->request();
       $this->user = $this->dic->user();
       $this->ctrl = $this->dic->ctrl();
-      $this->object = $this->dic->object();
     }
     
     public function performCommand(/*string*/ $cmd)/*:void*/
