@@ -1,6 +1,4 @@
 <?php
-require("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/PWA/classes/class.ilPWAPlugin.php");
-
 /**
  * Config screen
  */
