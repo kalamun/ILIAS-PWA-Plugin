@@ -7,3 +7,6 @@ icon_512#:#Large icon (512 x 512px, PNG)
 install_title#:#Install the app on your device
 not_now#:#Not now
 install#:#Install
+error_manifest#:#The manifest file can’t be updated
+error_icon192#:#The small icon can’t be updated
+error_icon512#:#The large icon can’t be updated

@@ -104,18 +104,25 @@ class ilPWAConfigGUI extends ilPluginConfigGUI {
         $manifest = str_replace('{NAME}', $_POST['title_long'], $manifest);
         $manifest = str_replace('{SHORT_NAME}', $_POST['title_short'], $manifest);
 
-        file_put_contents('manifest.json', $manifest);
+        $manifest_status = @file_put_contents('manifest.json', $manifest);
 
         if (!empty($_FILES['icon_192']['name'])) {
-            move_uploaded_file($_FILES["icon_192"]["tmp_name"], './manifest_logo192.png');
+            $icon192_status = @move_uploaded_file($_FILES["icon_192"]["tmp_name"], 'manifest_logo192.png');
         }
         if (!empty($_FILES['icon_512']['name'])) {
-            move_uploaded_file($_FILES["icon_512"]["tmp_name"], './manifest_logo512.png');
+            $icon512_status = @move_uploaded_file($_FILES["icon_512"]["tmp_name"], 'manifest_logo512.png');
         }
 
         self::configure();
 
-        ilUtil::sendSuccess($this->plugin->txt("configuration_saved"), true);
-
+        if ($manifest_status === false) {
+            ilUtil::sendFailure($this->plugin->txt("error_manifest"), true);
+        } elseif ($icon192_status === false) {
+            ilUtil::sendFailure($this->plugin->txt("error_icon192"), true);
+        } elseif ($icon512_status === false) {
+            ilUtil::sendFailure($this->plugin->txt("error_icon512"), true);
+        } else {
+            ilUtil::sendSuccess($this->plugin->txt("configuration_saved"), true);
+        }
     }
 }
